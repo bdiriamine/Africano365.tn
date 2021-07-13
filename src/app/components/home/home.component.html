@@ -1,0 +1,252 @@
+ <div class="row" >
+  <video  id="myVideo"  loop  autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true" style="margin: 0 auto;">
+    <source src="../../../assets/africano356.mp4" type='video/mp4' >
+  </video>
+</div> 
+
+<!-- 
+ <div class="AR">
+  <div class="container">
+    <div class="blue-neon">
+      <div class="red-neon">عيش متعة الرهان الرياضي</div>
+    </div>
+  </div>
+</div>  -->
+
+<h2  id="bq2" class="sizeChange"></h2>
+    <div class="ag-cards-block " id="bq3">
+      <div class="ag-format-container">
+        <ul class="ag-cards_list">
+          <li class="ag-cards_item ag-cards_item__specialist" (click)="gotoSport()">
+            <div class="ag-cards_info">
+              <picture class="ag-cards_picture">
+                <source srcset="../../../assets/SP.gif" type="image/webp">
+                <img src="../../../assets/SP.gif" alt="Oligarch" class="ag-cards_img">
+              </picture>
+              <div class="ag-cards_descr">
+                <p class="ag-cards_text">
+                Africano365
+                <span class="ag-cards_text ag-cards_text__field">Ouvrire</span>
+                </p>
+                <p class="ag-cards_text ag-cards_text__right">
+                  Plus que <span class="ag-cards_text ag-cards_text__field">180 Jeux</span>
+                </p>
+              </div>
+              
+              
+              <div class="ag-cards_btn">
+                <span class="ag-cards_text ag-cards_text__btn">Sport</span>
+              </div>
+            </div>
+          </li>
+    
+          <li class="ag-cards_item ag-cards_item__salaga" (click)="gotoLive()">
+            <div class="ag-cards_info">
+              <picture class="ag-cards_picture" >
+                <source srcset="../../../assets/VR.gif" type="image/webp">
+                <img src="../../../assets/VR.gif" alt="Lucky" class="ag-cards_img" style="height: 220px;width:105%">
+              </picture>
+              <div class="ag-cards_descr">
+                <p class="ag-cards_text">
+                  Africano365 <span class="ag-cards_text ag-cards_text__field">Ouvrire</span>
+                </p>
+                <p class="ag-cards_text ag-cards_text__right">
+                  Pari <span class="ag-cards_text ag-cards_text__field">Sportif En Ligne
+                  </span>
+                </p>
+              </div>
+              <div class="ag-cards_btn">
+                <span class="ag-cards_text ag-cards_text__btn">Live Sport</span>
+              </div>
+            </div>
+          </li>
+    
+          <li class="ag-cards_item ag-cards_item__lucky" (click)="gotoVR()">
+            <div class="ag-cards_info">
+              <picture class="ag-cards_picture">
+                <source srcset="../../../assets/virtuels.gif" type="image/webp">
+                <img src="../../../assets/virtuels.gif" alt="Lucky" class="ag-cards_img" style="height: 217px;width:105%">
+              </picture>
+              <div class="ag-cards_descr">
+                <p class="ag-cards_text">
+                  Africano365 <span class="ag-cards_text ag-cards_text__field">Ouvrire</span>
+                </p>
+                <p class="ag-cards_text ag-cards_text__right">
+                  Virtuel <span class="ag-cards_text ag-cards_text__field">Jeux</span>
+                </p>
+              </div>
+             
+              <div class="ag-cards_btn">
+                <span class="ag-cards_text ag-cards_text__btn">Virtuel</span>
+              </div>
+            </div>
+          </li>
+    
+          <li class="ag-cards_item ag-cards_item__amateur" (click)="gotoCasino()">
+            <div class="ag-cards_info">
+              <picture class="ag-cards_picture">
+                <source srcset="../../../assets/casino.gif" type="image/webp">
+                <img src="../../../assets/casino.gif" alt="Fortunate" class="ag-cards_img" style="height: 290px;width:105%">
+              </picture>
+              <div class="ag-cards_descr">
+                <p class="ag-cards_text">
+                Africano365 <span class="ag-cards_text ag-cards_text__field">Ouvrire</span>
+                </p>
+                <p class="ag-cards_text ag-cards_text__right">
+                  Plus que <span class="ag-cards_text ag-cards_text__field">2400 Jeux</span>
+                </p>
+              </div>
+             
+              <div class="ag-cards_btn">
+                <span class="ag-cards_text ag-cards_text__btn">Casino</span>
+              </div>
+            </div>
+          </li>
+    
+          <li class="ag-cards_item ag-cards_item__experienced" (click)="gotoLiveCasino()">
+            <div class="ag-cards_info">
+              <picture class="ag-cards_picture">
+                <source srcset="../../../assets/livecasino.gif" type="image/webp">
+                <img src="../../../assets/livecasino.gif" alt="Luxury" class="ag-cards_img" style="height: 220px;width:100%">
+              </picture>
+              <div class="ag-cards_descr">
+                <p class="ag-cards_text">
+                  Africano365 <span class="ag-cards_text ag-cards_text__field">Ouvrire</span>
+              </p>
+                <p class="ag-cards_text ag-cards_text__right">
+                  Plus que <span class="ag-cards_text ag-cards_text__field">300 Jeux</span>
+                </p>
+              </div>
+              <div class="ag-cards_btn">
+                <span class="ag-cards_text ag-cards_text__btn">Live Casino</span>
+              </div>
+            </div>
+          </li>
+    
+     
+    
+          <li class="ag-cards_item ag-cards_item__professional" (click)="gotoBlackJack()">
+            <div class="ag-cards_info">
+              <picture class="ag-cards_picture">
+                <source srcset="../../../assets/bj.gif" type="image/webp">
+                <img src="../../../assets/bj.gif" alt="Millionaire" class="ag-cards_img" style="height: 220px;width:100%">
+              </picture>
+              <div class="ag-cards_descr">
+                <p class="ag-cards_text">
+                  Africano365 <span class="ag-cards_text ag-cards_text__field">Ouvrire</span>
+                </p>
+                <p class="ag-cards_text ag-cards_text__right">
+                  Victoire  <span class="ag-cards_text ag-cards_text__field">Facile</span>
+                </p>
+              </div>
+              <div class="ag-cards_btn">
+                <span class="ag-cards_text ag-cards_text__btn">BlackJack</span>
+              </div>
+            </div>
+          </li>
+    
+          <li class="ag-cards_item ag-cards_item__thieves" (click)="gotoJP()">
+            <div class="ag-cards_info">
+              <picture class="ag-cards_picture">
+                <source srcset="../../../assets/jackpot.gif" type="image/webp">
+                <img src="../../../assets/jackpot.gif" alt="Boss" class="ag-cards_img" style="height: 220px;width:100%">
+              </picture>
+              <div class="ag-cards_descr">
+                <p class="ag-cards_text">
+                  Africano365 <span class="ag-cards_text ag-cards_text__field">Ouvrire</span>
+                </p>
+                <p class="ag-cards_text ag-cards_text__right">
+                  Grande  <span class="ag-cards_text ag-cards_text__field">Victoire</span>
+                </p>
+              </div>
+              <div class="ag-cards_btn">
+                <span class="ag-cards_text ag-cards_text__btn">Jackpot</span>
+              </div>
+            </div>
+          </li>
+       
+          <li class="ag-cards_item ag-cards_item__specialist" (click)="gotoRT()">
+            <div class="ag-cards_info">
+              <picture class="ag-cards_picture">
+                <source srcset="../../../assets/score.png" type="image/webp">
+                <img src="../../../assets/score.png" alt="Oligarch" class="ag-cards_img" style="height: 231px;width:100%">
+              </picture>
+              <div class="ag-cards_descr">
+                <p class="ag-cards_text">
+                Africano365
+                <span class="ag-cards_text ag-cards_text__field">Ouvrire</span>
+                </p>
+                <p class="ag-cards_text ag-cards_text__right">
+                  Tous <span class="ag-cards_text ag-cards_text__field">Les Scores</span>
+                </p>
+              </div>
+              
+              
+              <div class="ag-cards_btn">
+                <span class="ag-cards_text ag-cards_text__btn">Résultats</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+    <h2  id="bq2" class="sizeChange"></h2>
+    <div class="web">
+  
+      <div class="row " style="background-color: #001f32; height: 900px;
+      background-repeat: no-repeat;object-fit: cover;   padding: 50px 0;
+    background-color: #141a1f;
+    margin-bottom: 10px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../../../assets/bgg.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;">
+      
+          <div style="width: 37%;background-image:
+          url(../../../assets/pic_bj.png);
+          background-size: auto;background-repeat: no-repeat;
+        background-position: center;object-fit: cover; background-size: 100% 100%;">
+              <div class="col-md-3 col-xs-3 col-sm-3 col-3 col-lg-3 col-xl-3">
+                  
+              </div>
+          </div>
+          <div style="width: 60%;">
+                  <div class="row">
+                      <div class="col-md-3 col-xs-3 col-sm-3 col-3 col-lg-3 col-xl-3" *ngFor="let tk of games | slice:0:12; let i=index ">
+                          <div class="wrapper">
+                  
+                            
+                  
+                              <div class="cards ">
+                  
+                                  <figure class="card"  >
+                  
+                                      <img class="img-size" [src]="tk.GameImage" />
+                  
+                                      <figcaption style="font-weight: bold;color: rgb(255, 255, 255);color: rgb(235, 235, 235);;">
+                  
+                  
+                                          <button class="shadow rounded-pill" *ngIf="!username" (click)="loginsession()" style="background-color: #ff00f2;border-radius: 5%; border: none;margin-bottom: 15%;height: 40px;">  Connectez-vous</button> 
+                                         <span style="margin-top:- 40%">
+                                          {{tk.GameName}}
+                                         </span>
+                                        
+                  
+                                      </figcaption>
+                  
+                                  </figure>
+                  
+                  
+                  
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+            
+          </div>
+      
+      
+      </div>
+    </div>

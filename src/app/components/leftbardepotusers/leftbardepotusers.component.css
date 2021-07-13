@@ -1,0 +1,148 @@
+
+ 
+  .no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+.no-gutters>[class*=col-] {
+    padding-right: 0;
+    padding-left: 0;
+}
+.col-lg-9 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+.content-main.touch-left {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.content-main {
+    border-radius: .25rem;
+    background-color: #fff;
+    padding: 30px;
+    height: 100%;
+}
+h3 {
+    text-transform: uppercase;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    font-family: inherit;
+    font-weight: 400;
+    line-height: 1.1;
+    color: inherit;
+    margin-top: 0;
+}
+.nav-account .list-group-item-action {
+    text-align: justify;
+    height: 50px;
+    background-color: #434343;
+    color: #f0c403;
+    -webkit-transition: color .2s ease,background-color .2s ease;
+    transition: color .2s ease,background-color .2s ease;
+}
+.nav-account .list-group-item {
+    border-right: 0;
+    border-color: #d7af03;
+}
+.list-group-item-action {
+    width: 100%;
+    color: #454444;
+    text-align: inherit;
+}
+.active{
+    background-color: #fff;
+    color: #111;
+    border-color: transparent;
+  }
+.account-nav-wrap {
+    height: 100%;
+    background-color: #434343;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    overflow: hidden;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+   background-color: #c3c3c3
+}
+
+.nav-link{
+    background-color: #ededed;
+    color: rgb(98, 98, 98);
+    font-weight: bold;
+    border-bottom: 2px solid rgb(189, 189, 189);
+}
+
+
+@media (min-width: 768px)  {
+    .web{display: block;}
+  .mobi{display: none;}
+  .anim{
+      height: 250px;
+  }
+  }
+  @media (max-width: 767px)  {
+      .anim{
+          height: 90px;
+      }
+  .web{display: none;}
+  .mobi{display: block;}
+  .dropdown-item{
+  font-size: 9px;
+  background-color: rgb(34, 33, 33);
+  color: rgb(155, 153, 153);
+  
+  }
+  .ami{
+  font-weight: 800;
+  font-size: 13px;
+  }
+  .ng-scope{
+  font-size: 9px;
+  }
+  }
+  .toolbar ul {
+    display:table-row;
+}
+.toolbar ul li
+{
+    display: table-cell;
+  
+    list-style-type: none;
+    margin: 10px;
+  
+    border: 0.5px solid rgb(24, 23, 23);
+}
+.toolbar ul li a {
+    display:table-cell;
+    vertical-align: middle;
+
+    border: solid 1px black;
+}
+.toolbar ul li.button a {
+    height:50px;
+    border: solid 1px black;
+}
+
+input[type="button"]{
+    outline:none;
+ }
+ input[type="button"]::-moz-focus-inner {
+    border: 0;
+ }
+ *:focus {
+    outline: 0 !important;
+}
+
+
+.bt:focus {
+           
+    box-shadow: 0 4px 2px -2px  #00a2ff;
+}
+.bt:focus,
+.bt:hover {
+    box-shadow: 0 4px 2px -2px  #00a2ff;
+}

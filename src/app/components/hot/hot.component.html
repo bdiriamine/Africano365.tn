@@ -1,0 +1,35 @@
+<app-loadingsp *ngIf="load"></app-loadingsp>
+
+<div  *ngIf="!load" class="row">
+    <img class="photosiz" src="../../../assets/B4.jpg" alt="">
+</div>
+
+
+<div *ngIf="!load" class="search-results " infiniteScroll [infiniteScrollDistance]="0.5" >
+    <div class="row ">
+        <div class="col-lg-3 col-xl-2 col-md-6 col-sm-6 col-xs-6  col-6" *ngFor="let tk of games   | sort">
+            <div class="wrapper" >
+
+                <div class="cards " >
+
+                    <figure *ngIf="tk.GameName!=='Golden Race'" class="card" style="background-color: transparent; box-shadow: 0 5px 10px #00a2ff;">
+
+                        <img class="img-size" (click)="startGame(tk.url,tk.gapi,tk.menu_title)" [src]="tk.GameImage" onerror="this.src='assets/2.jpg'"  />
+
+                        <figcaption style="font-weight: bold;background-color: transparent; padding-top: 6%;padding-bottom: 3%;height: 50px;height: 20%;">
+                            <div style=" text-overflow: ellipsis;text-align: center;">
+                                <span class="game-title " style="position: relative;background-color: transparent;text-overflow: ellipsis;text-align: justify;"> {{tk.GameName}} </span>
+                            </div>
+                            <!--      <div style="float: right; width: 40%;">
+                                 <span style="float: right;z-index: 99 !important;margin:0px 7px 0;font-weight: bold;color:#d6dadc"><i class="fa fa-heart-o" style="color:#d6dadc" aria-hidden="true"></i>
+                               </span>
+                </div>-->
+                        </figcaption>
+
+                    </figure>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

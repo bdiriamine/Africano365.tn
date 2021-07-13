@@ -1,0 +1,101 @@
+@media screen and (min-width: 992px) {
+  .mobi{display: none  !important;}
+
+}
+
+  @media screen and (max-width: 991px) {
+    .mobi{display: block  !important;}
+  }
+
+ 
+
+
+ .item {
+  bottom: 20px; right:20px;
+  position: fixed;
+  border-radius: 1rem;
+  background: rgb(72, 73, 72);
+  box-shadow: inset 0 0 5em rgba(0,0,0,0.3);
+  width: 50px;
+  height: 50px;
+  margin: 8rem auto 2rem auto;
+}
+
+.unseen-count {
+  width: 27px;
+  height: 27px;
+  background: #FED301;
+  border-radius: 50%;
+  top: -0.5rem;
+  left: -0.5rem;
+  position: absolute;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  text-align: center;
+  font-size: 15px;
+  font-family: sans-serif;
+  color: #fff;
+  line-height: 2rem;
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  7%  { transform: translateY(-1.5rem); }
+  10%  { transform: translateY(0); }
+  15% { transform: translateY(-0.7rem); }
+  18% { transform: translateY(0); }
+  21% { transform: translateY(-0.3rem); }
+  23% { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}
+
+.unseen-count-animation {
+  animation-name: bounce;
+  animation-timing-function: ease;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+.controls {
+  text-align: center;
+}
+
+.controls > .add {
+  background: #ccc;
+  border: 2px solid #777;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+
+.icon-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  color: #333333;
+  background: #DDDDDD;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+}
+.icon-button:hover {
+  cursor: pointer;
+}
+.icon-button:active {
+  background: #CCCCCC;
+}
+.icon-button__badge {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  background: red;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}

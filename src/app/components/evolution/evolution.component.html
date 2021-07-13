@@ -1,0 +1,16 @@
+<app-loadingsp *ngIf="load"></app-loadingsp>
+<div class="row " *ngIf="!load"  >
+    <div class="btn-group" role="group" aria-label="Basic example" style="width: 100%;margin-top: 1%;margin-bottom: 1%;">
+        <button type="button" class="btn btn-secondary" style="border: 1px solid BLACK;" onclick="var el = document.getElementById('iframe'); el.requestFullscreen();">  Ouvrir en plein écran</button>
+        <button type="button" class="btn btn-secondary" style="border: 1px solid BLACK;" (click)="gotohome()"> Page d'Accueil</button>
+      </div>
+</div>
+<div class="row" *ngIf="!load">
+    <div class="game_wrapper lazyloaded">
+        <div class="game lazyloaded">
+            <iframe class="iframewith" style="width: 100%;height: 100vh;overflow: hidden;position: absolute;padding-right: -15px;margin-right: -15px; " id="iframe" tabindex="0" frameborder="0" scrolling="no" allowfullscreen="" [src]=iframUrl ></iframe>
+
+        </div>
+
+    </div>
+</div>

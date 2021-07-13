@@ -1,0 +1,102 @@
+@media screen and (min-width: 992px) {
+    .mobil {
+        display: none;
+    }
+    .web {
+        display: block;
+    }
+    .tt{
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .mobil {
+        display: block;
+    }
+    .web {
+        display: none;
+    }
+    .tt{
+        width: 100%;
+    }
+    .cn1{
+        margin-top: 20%;
+    }
+}
+
+button {
+    background: #00a2ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 999;
+}
+
+button:focus {
+    outline: none;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    opacity: 0;
+    transition: all .2s ease-in-out;
+    background-color: #ededed;
+    color: #002c42;
+    height:50px;
+    width:40px;
+}
+
+.show-scroll {
+    opacity: 1;
+}
+
+@media (min-width: 992px) {
+    .web {
+        display: block;
+    }
+    .mobi {
+        display: none !important;
+    }
+ 
+}
+
+
+
+@media (max-width:991px) {
+    
+   
+    .web {
+        display: none !important;
+    }
+    .mobi {
+        display: block;
+    }
+    
+}
+
+
+.img {
+    margin-right: -15px;
+    margin-left: -15px;
+    padding-bottom: 62.5%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#scrolly {
+    width: 1000px;
+    height: 190px;
+    overflow: auto;
+    overflow-y: hidden;
+    margin: 0 auto;
+    white-space: nowrap
+}
+input:focus{
+    outline: none;
+}
+
+

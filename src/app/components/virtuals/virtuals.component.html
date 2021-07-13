@@ -1,0 +1,6 @@
+<app-loadingsp *ngIf="load"></app-loadingsp>
+<div class="row " *ngIf="!load">
+    <div class="videoWrapper" style="width: 100%;height: 100%;">
+        <iframe class="videoWrapper2 ht" style="width: 100%;overflow: hidden;position: absolute;" id=" ifr" allowfullscreen scrolling="no"  [src]="iframUrl" frameborder="0" seamless="seamless"></iframe>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+<div class="container-fluid " style="  font-family: 'Open Sans', sans-serif;">  
+<div class="row no-gutters web" style="    padding-right: 80px;padding-left: 60px;padding-top: 20px;padding-bottom: 20px;">
+    <div class="col-xl-3 col-lg-3 col-md-3 col-12 col-xs-12 col-sm-12" >
+      <app-leftbardepotusers></app-leftbardepotusers>
+</div>
+    <div class="col-xl-9 col-lg-9 col-md-9 col-12 col-xs-12 col-sm-12" >
+        <div class="content-main touch-left"  >
+          <div class="row" style="border-radius: 50px;border:1px solid #9c9c9c;height:40px;padding-top: 1%;width:90%;margin-left: 6%;">
+            <h4 class="page-title" style="font-size:17px;font-weight:bold; text-transform: uppercase;margin: 0 auto;"> Détails personnels</h4>
+          </div>
+          <form action="/" class="form form-user-details" style="color: white;margin-top: 4%;">
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <div class="form-group">
+                        <label for="user-first-name" class="form-control-label" style="color:#002c42">Nom d'utilisateur</label> 
+                        <input type="text" id="user-first-name" [(ngModel)]="firsname" name="firstname" value="" readonly="readonly" required="required" class="form-control">
+                    </div>
+                </div> 
+                <div class="col-md-6 col-12">
+                    <div class="form-group">
+                        <label for="user-city" class="form-control-label" style="color:#002c42"> Ville	</label> 
+                        <input type="text" id="user-city" name="city" value="" [(ngModel)]="ville" readonly="readonly" class="form-control">
+                    </div>
+                  </div> 
+                  <div class="col-md-6 col-12">
+                    <div class="form-group">
+                        <label for="user-country" class="form-control-label" style="color:#002c42">Date de creation	</label> 
+                        <input type="text" id="user-country" value="" readonly="readonly" placeholder="{{satecr | date}}" class="form-control"> 
+                        <input type="hidden" name="country" value="TN">
+                    </div>
+                </div> 
+                    <div class="col-md-6 col-12">
+                      <div class="form-group">
+                        <label for="user-id" class="form-control-label" style="color:#002c42">Etat du compte </label> 
+                        <input type="text" id="user-id" name="user_id" value="" readonly="readonly" placeholder="{{etat}}" class="form-control">
+                      </div>
+                    </div> 
+             
+                    <div class="col-12">
+                      <hr> <!----> 
+                 
+                    </div>
+                  </div> 
+                  <input type="hidden" name="language" value="en">
+                </form>
+            
+        </div>
+    </div>
+</div>
+
+</div>
+<div class="row mobi" style=" margin-bottom: 2%;">
+  <app-leftbardepotusers></app-leftbardepotusers>
+</div>
+<div class="row mobi" style="margin-bottom: 2%;">
+    <div class="col-xl-12 col-lg-12 col-12 col-xs-12 col-sm-12 " >
+        <div class="content-main touch-left">
+          <div class="row" style="border-radius: 50px;border:1px solid #9c9c9c;height:40px;padding-top: 3%;width:90%;margin-left: 6%;">
+            <h4 class="page-title" style="font-size:13px;font-weight:bold; text-transform: uppercase;margin: 0 auto;"> Détails personnels</h4>
+          </div>
+
+          <form action="/" class="form form-user-details" style="color: white;margin-top: 4%;">
+              <div class="row">
+                  <div class="col-md-6 col-12">
+                      <div class="form-group">
+                          <label for="user-first-name" class="form-control-label" style="color:#002c42">Nom d'utilisateur</label> 
+                          <input type="text" id="user-first-name" [(ngModel)]="firsname" name="firstname" value="" readonly="readonly" required="required" class="form-control">
+                      </div>
+                  </div> 
+                  <div class="col-md-6 col-12">
+                      <div class="form-group">
+                          <label for="user-city" class="form-control-label" style="color:#002c42"> Ville	</label> 
+                          <input type="text" id="user-city" name="city" value="" [(ngModel)]="ville" readonly="readonly" class="form-control">
+                      </div>
+                    </div> 
+                    <div class="col-md-6 col-12">
+                      <div class="form-group">
+                          <label for="user-country" class="form-control-label" style="color:#002c42">Date de creation	</label> 
+                          <input type="text" id="user-country" value="" readonly="readonly" placeholder="{{satecr | date}}" class="form-control"> 
+                          <input type="hidden" name="country" value="TN">
+                      </div>
+                  </div> 
+                      <div class="col-md-6 col-12">
+                        <div class="form-group">
+                          <label for="user-id" class="form-control-label" style="color:#002c42">Etat du compte </label> 
+                          <input type="text" id="user-id" name="user_id" value="" readonly="readonly" placeholder="{{etat}}" class="form-control">
+                        </div>
+                      </div> 
+               
+                      <div class="col-12">
+                        <hr> <!----> 
+                   
+                      </div>
+                    </div> 
+                    <input type="hidden" name="language" value="en">
+                  </form>
+        </div>
+    </div>
+</div> 
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+
+
+<div class="row tailleforwindow" style="z-index: 1; margin-top: 5px;" >
+    <div  style="width: 100%;">
+
+      <ngb-carousel >
+        <ng-template  ngbSlide *ngFor="let event of slides">
+          <img [src]="event.url" class="photosiz" alt="Random slide" style="width: 100%;  ">
+        
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </div>

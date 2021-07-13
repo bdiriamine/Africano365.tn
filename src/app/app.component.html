@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<div id="divToStyle">
+    <div class="container-fluid" style="background-color: #001f32;">
+       
+        <app-header id="hd"></app-header>
+        <router-outlet id="bd">
+
+        </router-outlet>
+        <app-betslip class="mobi " id="hider"></app-betslip>
+    </div>
+    <button [ngClass]="{'show-scroll': showScroll}" (click)="scrollToTop()" class="scroll-to-top web">
+  <i class="fa fa-angle-double-up" style="font-size: 25px;" aria-hidden="true"></i>
+
+</button>
+    <app-footer id="ftr"></app-footer>
+
+</div>

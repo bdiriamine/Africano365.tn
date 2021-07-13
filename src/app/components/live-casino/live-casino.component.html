@@ -1,0 +1,96 @@
+<app-loadingsp *ngIf="load"></app-loadingsp>
+<div class="row"  *ngIf="!load">
+    <img class="photosiz" src="../../../assets/B2.jpg" alt="">
+</div>
+<div  *ngIf="!load" class="nvs-live-casino-filter-wrapper row" style="background: #0075bf;justify-content: space-between;">
+    <div class="col-md-5 col-lg-5 col-xl-5 col-sm-12 col-xs-12 col-12 ">
+        <div class="filter-left" style="width: 100%;">
+            <ul class="category-games" >
+
+                <li style="color: #002c42;font-weight: 900;" (click)="baccara()" ng-repeat="menu in vmLiveCasinoManager.filterGameMenu | orderBy:'name' track by $index" ng-class="{'active': menu.isChecked}" ng-click="vmLiveCasinoManager.liveCasinoListGame(menu.tags[0], menu)" class="ng-scope" role="button"
+                    tabindex="0">
+                    <i class="icon-baccarat"></i> <span ng-translate="" translate="Baccara" class="ng-isolate-scope">Baccara</span>
+                </li>
+
+                <li style="color: #002c42;font-weight: 900;" (click)="blackjackCasino()" ng-repeat="menu in vmLiveCasinoManager.filterGameMenu | orderBy:'name' track by $index" ng-class="{'active': menu.isChecked}" ng-click="vmLiveCasinoManager.liveCasinoListGame(menu.tags[0], menu)" class="ng-scope" role="button"
+                    tabindex="0">
+                    <i class="icon-blackjack"></i> <span ng-translate="" translate="Blackjack" class="ng-isolate-scope">Blackjack</span>
+                </li>
+
+                <li style="color: #002c42;font-weight: 900;" (click)="poker()" ng-repeat="menu in vmLiveCasinoManager.filterGameMenu | orderBy:'name' track by $index" ng-class="{'active': menu.isChecked}" ng-click="vmLiveCasinoManager.liveCasinoListGame(menu.tags[0], menu)" class="ng-scope" role="button" tabindex="0">
+                    <i class="icon-poker"></i> <span ng-translate="" translate="Poker" class="ng-isolate-scope">Poker</span>
+                </li>
+
+                <li style="color: #002c42;font-weight: 900;" (click)="RouletteCasino()" ng-repeat="menu in vmLiveCasinoManager.filterGameMenu | orderBy:'name' track by $index" ng-class="{'active': menu.isChecked}" ng-click="vmLiveCasinoManager.liveCasinoListGame(menu.tags[0], menu)" class="ng-scope" role="button"
+                    tabindex="0">
+                    <i class="icon-roulette"></i> <span ng-translate="" translate="Roulette" class="ng-isolate-scope">Roulette</span>
+                </li>
+
+                <li style="color: #002c42;font-weight: 900;" (click)="allgamess()" ng-repeat="menu in vmLiveCasinoManager.filterGameMenu | orderBy:'name' track by $index" ng-class="{'active': menu.isChecked}" ng-click="vmLiveCasinoManager.liveCasinoListGame(menu.tags[0], menu)" class="ng-scope active" role="button"
+                    tabindex="0">
+                    <i class="icon-all"></i> <span ng-translate="" translate="Tout" class="ng-isolate-scope">Tout</span>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2 col-xl-2  col-sm-12 col-xs-12 col-12">
+        <div class="dropdown" style="width: 100%; margin-bottom: 2%;margin-top: 2%;">
+            <select class="dropClass rounded-pill" name="my-select" [(ngModel)]="filtreGame" (change)="selectChange($event)">
+                <option [value]="item.Provider" *ngFor="let item of provider" >
+                    {{item.Provider}}
+                </option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-3 col-lg-3 col-xl-3 col-sm-12 col-xs-12 col-12 ">
+        <div class="input-group" style="margin-bottom: 2%;margin-top: 2%;">
+            <div class="search-container" style="width: 100%;">
+                <input [(ngModel)]="filterdata" class="filter-input rounded-pill" type="text" placeholder=" Recherche " name="search " style="width: 100%;background-color:#002c42; border: none;height: 42px;border-radius: 2%;padding-bottom: 2%;color: #dadada">
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+<div  *ngIf="!load" class="search-results " infiniteScroll [infiniteScrollDistance]="0.5" >
+    <div class="row ">
+        <div class="col-lg-3 col-xl-2 col-md-6 col-sm-6 col-xs-6  col-6" *ngFor="let tk of games  | filter: filterdata | sort">
+            <div class="wrapper" >
+
+                <div class="cards " >
+
+                    <figure *ngIf="tk.GameName!=='Golden Race'" class="card" style="background-color: transparent; box-shadow: 0 5px 10px #00a2ff;">
+
+                        <img class="img-size" (click)="startGame(tk.url,tk.gapi,tk.menu_title)"  [src]="tk.GameImage" onerror="this.src='assets/3.jpg'"  />
+
+                        <figcaption style="font-weight: bold;background-color: transparent; padding-top: 6%;padding-bottom: 3%;height: 50px;height: 20%;">
+                            <div style=" text-overflow: ellipsis;text-align: center;">
+                                <span class="game-title " style="position: relative;background-color: transparent;text-overflow: ellipsis;text-align: justify;"> {{tk.GameName}} </span>
+                            </div>
+                            <!--      <div style="float: right; width: 40%;">
+                                 <span style="float: right;z-index: 99 !important;margin:0px 7px 0;font-weight: bold;color:#d6dadc"><i class="fa fa-heart-o" style="color:#d6dadc" aria-hidden="true"></i>
+                               </span>
+                </div>-->
+                        </figcaption>
+
+                    </figure>
+
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+</div>
+<!-- sinner -->
+<div class="row pb-5">
+    <div class="col-md-12 p-5">
+        <ngx-spinner bdOpacity=0.9 bdColor="" size="default" color="#FFFF00" type="ball-pulse-sync" [fullScreen]="false">
+        </ngx-spinner>
+    </div>
+</div>

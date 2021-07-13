@@ -1,0 +1,363 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<div class="light1 web">
+    <div style="left: 11%" class="ray"></div>
+    </div>
+    
+    <div class="light2 web"> 
+    <div style="right: 0%" class="ray"></div>
+    </div> 
+<div class="web" ng-app="tickerApp">
+    <div ng-controller="TICKER">
+      <div class="ticker">
+        <div class="info-container">
+        
+          <div class="info " style="font-family: bein">          برشا هدايا وبرشا مفاجآت تستنا فيكم  </div>
+        </div>
+      </div>
+      <div class="logo-container">
+        <img src="../../../assets/africano/africano.png" style="width: 60% ;height: 52px;margin-top:1%;margin-left: 4%;" alt="">
+      </div>
+      <div class="logo">
+      </div>
+    </div>
+  </div>
+<div [ngSwitch]="authboluser" >
+    <div *ngSwitchCase=true  class="row web" style=" font-family: 'Open Sans', sans-serif;height: 140px;display: flex;align-items: center;">
+        <div class="col-lg-8 col-xl-8 col-md-8 col-sm-8 col-xs-8 bgimagelogo" style="width: 100%;height:100%">
+         <a href=""> <img class="" src="../../../assets/africano/logoo.png" style=" width:16%; height: 60px;margin-left: -15px;position: relative;left: 6%;top: 40px;" alt=""></a>  
+        </div>
+        <div class="col-lg-4 col-xl-4 col-md-4 col-sm-4 col-xs-4 " >
+            <div class="row" style=" flex-wrap: nowrap; text-align: center;justify-self: center; justify-content: center; ">
+                <div class="dropdown rounded-pill" style="background: linear-gradient(#ededed, #dadada); color: #555555;border-radius: 8px;float:right">
+                    <button class=" btn   dropdown-toggle rounded-pill" type="button" id="dropdownMenu2" style="background: linear-gradient(#ededed, #dadada); color: #555555;width: 100%; border-radius: 8px;height: 50px;font-weight: bold;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user menu-info" aria-hidden="true" style=" font-size: 17px;vertical-align: middle;"></i>  <span style=" margin-top: 2%;font-size: 17px;vertical-align: middle;margin-left: 10%">{{username}}</span> 
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background: linear-gradient(#ededed, #dadada); color: #555555;">
+                        <a routerLink="/History-Paris-Iframe" class="dropdown-item" style="background: linear-gradient(#ededed, #dadada); color: #555555;">Activites du compte				</a>
+                        <a routerLink="/personal-details" class="dropdown-item" style="background: linear-gradient(#ededed, #dadada); color: #555555;">Personnel			</a>
+                    </div>
+                </div>
+                <button class="rounded-pill" style="background: linear-gradient(#ededed, #dadada); color: #555555;font-size: 17px;border-radius: 8px;border: none;margin-left: 2%;padding: 3px 8px 3px 3px;font-weight: bold;">
+                    <span  > <i class="fas fa-coins" style="padding-left: 3px;"></i> Solde :  {{score}} DT </span>
+                </button>
+                <button class="rounded-pill" (click)="exit()" style="background: linear-gradient(#ededed, #dadada); color: #555555; ;font-size: 17px;border-radius: 8px;border: none;margin-left: 2%;padding: 3px 3px 3px 3px;font-weight: bold;">
+                    <span style="padding: 3px 3px 3px 3px;" > <i class="fas fa-sign-out-alt"></i> Déconnexion </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="w3-container" style="font-family: 'Open Sans', sans-serif;">
+        <div id="id01" class="w3-modal" style="z-index: 999;">
+            <div class="w3-modal-content " style="width: 600px;">
+                <div class="w3-container" style="background-color: #001f32;">
+    
+                    <div class="card" style="width: 100%;background-color: #001f32;border: none;">
+                        <div class="card-body">
+                            <h5 class="card-title " style="color: white;font-weight: bold; border-bottom: 1px solid #ededed!important;padding-bottom: 5%;font-size: 22px;margin-top: 2%;">Connexion</h5>
+                            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright" style="color: white;font-size: 30px;">&times;</span>
+                            <form [formGroup]="loginForm" class="login-container classForCNXbtnI" (ngSubmit)="login()">
+    
+                                <p class="" style="color: #d5d5d5;;padding-left: 10px;font-weight: 900;font-family: beinfr;">Nom d'utilisateur </p>
+    
+                                <p [ngClass]="{ 'has-error': isSubmitted && formControls.username.errors }">
+                                    <input type="text" placeholder="Nom d'utilisateur" formControlName="username" style="color: #d5d5d5;margin-top: 2%;width: 100%;height: 50px; border-radius: 40px;padding-left: 4%;background-color: #002c42;border:none">
+                                </p>
+    
+                                <div *ngIf="isSubmitted && formControls.username.errors" class="help-block">
+                                    <div *ngIf="formControls.username.errors.required">
+                                        <font color="red">Nom d'utilisateur requis</font>
+                                    </div>
+                                </div>
+                                <p style="color: #d5d5d5;margin-top: 5%;padding-left: 10px;font-weight: 900;font-family: beinfr;">Mot de passe</p>
+                                <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+                                    <input type="password" placeholder="Mot de passe" formControlName="password" style="margin-top: 2%;width: 100%;height: 50px;color: #d5d5d5; border-radius: 40px;padding-left: 4%;font-weight: 300;background-color: #002c42;border:none">
+                                </p>
+    
+                                <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+                                    <div *ngIf="formControls.password.errors.required">
+                                        <font color="red">Mot de passe requis</font>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top: 2%;">
+                                    <div class="col-md-6">
+    
+    
+                                        <a onclick="document.getElementById('id02').style.display='block';document.getElementById('id01').style.display='none'" class="w3-button w3-black" class=" fgps" style="font-family: beinfr; font-weight: 800;color: #DADADA;">
+                          Mot de passe oublié?   </a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button [disabled]="loading" type="submit" class="btnlogin rounded-pill " style="font-weight: 900;color: rgb(85, 85, 85);">  <span *ngIf="loading" class="spinner-border text-light spinner-border-sm mr-1" style="margin-bottom: 5px;font-family: beinfr;"></span> Connexion </button>
+    
+                                    </div>
+    
+                                </div>
+    
+                            </form>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w3-container" style="font-family: 'Open Sans', sans-serif;">
+        <div id="id02" class="w3-modal" style="z-index: 999;">
+            <div class="w3-modal-content " style="width: 400px;height: 227px;background-color: #001f32;">
+                <div class="w3-container" style="background-color: #001f32;">
+                    <div class="card" style="background-color: #001f32;border: none;">
+                        <div class="card-body">
+                            <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright" style="color: white;">&times;</span>
+    
+                            <h5 class="card-title " style="color: white;font-weight: 900;border-bottom: 1px solid rgb(168, 168, 168);padding-bottom: 4%;">Mot de passe oublié? </h5>
+                            <p style="font-size: 17px ;font-weight: 300; color: white;padding-top: 8%">On cas où vous avez oublié votre mot de passe merci de contacter la plus proche agence</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngSwitchCase=false   class="row web" style=" font-family: 'Open Sans', sans-serif;height: 140px;display: flex;align-items: center;">
+        
+        <div class="col-lg-8 col-xl-8 col-md-8 col-sm-8 col-xs-8 bgimagelogo" style="width: 100%;height:100%">
+          <a href=""><img class="" src="../../../assets/africano/logoo.png" style=" width:16%; height: 60px;margin-left: -15px;position: relative;left: 6%;top: 40px;" alt=""></a>  
+        </div>
+        <div class="col-lg-4 col-xl-4 col-md-4 col-sm-4 col-xs-4 ">
+            <div class="row">
+                <button class="header-login float-lg-right rounded-pill" style="background: linear-gradient(#ededed, #dadada); color: #909090;margin-left: 30%;" onclick="document.getElementById('id01').style.display='block'">   <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span> <span  > <i class="fa fa-sign-out"  aria-hidden="true"></i>  Connexion</span></button>
+            </div>
+        </div>
+    </div>
+    <div  class="row web" style="    background-color: #ededed;height: 45px;font-family: 'Open Sans', sans-serif; padding-left: 3%;;">
+        <div class="col-md-12 navi" style="padding-top: 7px">
+         <a routerLink="" style="color: #5e5e5e; font-weight: 500;">  <button class="rounded-pill" style="background-color: #dadada; width: 100px; border: none;height: 30px; float: left;"> Accueil</button></a>  
+         <a routerLink="/personal-account" style="color: #5e5e5e; font-weight: 500;">  <button class="rounded-pill" style="background-color: #dadada; width: 160px; border: none;height: 30px; float: left; margin-left: 1%;"> Termes et conditions </button></a> 
+        </div>
+    </div>
+    <div *ngSwitchCase=false  class="row web" style="padding-left: 3%; background: linear-gradient(#0075bf, #00527a); height: 50px;font-family: 'Open Sans', sans-serif;">
+        <div class="col-md-9 col-sm-8 col-xs-8">
+            <a routerLink="/sport" style="color: #ededed; font-weight: 500;">  <button class="rounded-pill B1" style="background-color: #002c42; width: 100px; border: none;height: 30px; float: left;margin-top: 1%;"> Sport</button></a>  
+            <a routerLink="/live-viewSimple" style="color: #ededed; font-weight: 500;">  <button class="rounded-pill B1" style="background-color: #002c42; width: 140px; border: none;height: 30px; float: left; margin-left: 1%; margin-top: 1%;"> Live </button></a> 
+        </div>
+        <div class="col-md-3 col-sm-4 col-xs-4">
+        </div>
+    </div>
+    <div *ngSwitchCase=true  class="row web" style="background: linear-gradient(#0075bf, #00527a);  height: 50px;font-family: 'Open Sans', sans-serif;padding-left: 3%;">
+        <div class="col-md-12 col-sm-12 col-xs-12 " style="font-size: 13px;"  [ngSwitch]="bloque">
+            <a routerLink="/sport" style="color: #ededed; font-weight: 500;">  <button class="rounded-pill B1" style="background-color: #002c42; width: 60px; border: none;height: 30px; float: left;margin-top: 10px;"> Sport</button></a>  
+            <a routerLink="/live-viewSimple" style="color: #ededed; font-weight: 500;">  <button class="rounded-pill B1" style="background-color: #002c42; width: 60px; border: none;height: 30px; float: left; margin-left: 5px; margin-top: 10px;"> Live </button></a> 
+            <a *ngSwitchCase=false routerLink="/virtuels" style="color: #ededed; font-weight: 500;">  <button class="rounded-pill B1" style="background-color: #002c42; width: 60px; border: none;height: 30px;margin-left: 5px; float: left;margin-top: 10px;"> Virtuels</button></a>  
+            <a  *ngSwitchCase=false routerLink="/Casino" style="color: #ededed; font-weight: 500;">  <button class="rounded-pill B1" style="background-color: #002c42; width: 60px; border: none;height: 30px; float: left; margin-left: 5px; margin-top: 10px;"> Casino </button></a> 
+            <a *ngSwitchCase=false routerLink="/Live-Casino" style="color: #ededed; font-weight: 500;">  <button class="rounded-pill B1" style="background-color: #002c42; width: 80px;margin-left: 5px; border: none;height: 30px; float: left;margin-top: 10px;"> Casino live</button></a>  
+            <a *ngSwitchCase=false routerLink="/Hot" style="color: #ededed; font-weight: 500;">  <button class="rounded-pill B1" style="background-color: #002c42; width: 99px; border: none;margin-left: 5px;height: 30px; float: left; ; margin-top: 10px;"> Meilleurs jeux </button></a> 
+            <a *ngSwitchCase=false routerLink="/JackPot" style="color: #ededed; font-weight: 500;">  <button class="rounded-pill B1" style="background-color: #002c42; width: 70px;margin-left: 5px; border: none;height: 30px; float: left;margin-top: 10px;"> JackPot</button></a>  
+            <a  *ngSwitchCase=false routerLink="/Black-Jack" style="color: #ededed; font-weight: 500;">  <button class="rounded-pill B1" style="background-color: #002c42; width: 70px;margin-left: 5px; border: none;height: 30px; float: left;  margin-top: 10px;"> BlackJack </button></a> 
+            <a *ngSwitchCase=false routerLink="/Evolution" style="color: #ededed; font-weight: 500;">  <button class="rounded-pill B1" style="background-color: #002c42; width: 70px;margin-left: 5px; border: none;height: 30px; float: left;margin-top: 10px;"> Evolution</button></a>  
+        </div>
+    </div>
+    <div id="mySidenav" class=" sidenav mobi" style="font-family: 'Open Sans', sans-serif;">
+        <span (click)="OpenScroll()">  
+            <a href="javascript:void(0)" class="closebtn"  onclick="document.getElementById('mySidenav').style.display='none'" >&times;</a>
+        </span>
+        <div style="background-color: #002C42;margin-top: 9%;width: 100%;height: 94.5%;border-top: 1px solid  #ededed;">
+            <div class="row" style="padding-top:9%">
+                <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 col-12 rounded-pill" style="height: 70px; ;">
+                    <button class="rounded-pill" style="background-color: #ededed;border: none; color: #0075BF;width: 50%;height: 90%; margin-left: 25%;  " (click)="gotoHome()" onclick="document.getElementById('mySidenav').style.display='none'" (click)="OpenScroll()">
+                            <i class="fa fa-home" aria-hidden="true" style="font-size: 19px;"></i> <br>
+                           <p style="text-align: center;font-family: 'Open Sans', sans-serif;font-style: normal;"> Accueil </p> 
+                        </button>
+                </div>
+                <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 col-12 rounded-pill"style="height: 70px; ;">
+                    <button class="rounded-pill" style="background-color: #ededed;border: none; color: #0075BF;width: 50%;height: 90%; margin-left: 25%;  " onclick="document.getElementById('mySidenav').style.display='none'" (click)="gotoSport()" (click)="OpenScroll()">
+                            <i class="fa fa-futbol-o" aria-hidden="true" style="font-size: 19px;"></i> <br>
+                            Sports
+                        </button>
+                </div>
+                <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 col-12 rounded-pill" style="height: 70px; ;">
+                    <button class="rounded-pill" style="background-color: #ededed;border: none; color: #0075BF;width: 50%;height: 90%; margin-left: 25%;  " onclick="document.getElementById('mySidenav').style.display='none'" (click)="gotoLive()" (click)="OpenScroll()">
+                            <i class="fa fa-caret-square-o-right" aria-hidden="true" style="font-size: 19px;"></i> <br>
+                
+                            Live 
+                          </button>
+                </div>
+                <div *ngIf="username" class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 col-12 rounded-pill" style="height: 70px; ;">
+                    <button class="rounded-pill" style="background-color: #ededed;border: none; color: #0075BF;width: 50%;height: 90%; margin-left: 25%;  " onclick="document.getElementById('mySidenav').style.display='none'" (click)="gotoVR()" (click)="OpenScroll()">
+                            <i class="fa fa-ship" aria-hidden="true" style="font-size: 19px;"></i> <br>
+                
+                             Virtuels
+                          </button>
+                </div>
+                <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 col-12 rounded-pill" style="height: 70px; ;">
+                    <button class="rounded-pill" style="background-color: #ededed;border: none; color: #0075BF;width: 50%;height: 90%; margin-left: 25%;  " onclick="document.getElementById('mySidenav').style.display='none'" (click)="gotoLiveScore()" (click)="OpenScroll()">
+                            <i class="fa fa-bar-chart" aria-hidden="true" style="font-size: 19px;"></i> <br>
+                
+                            Live Score
+                          </button>
+                </div>
+            </div>
+            <div class="row" style="background-color: #002C42;padding-top: 6%;width:60%" >
+                <img style="text-align: center;margin-left: 41%;" src="../../../assets/africano/africano.png" alt="">
+            </div>
+        </div>
+    </div>
+      
+    <div *ngSwitchCase=false  class="row mobi" style="background-color: #001f32;font-family: 'Open Sans', sans-serif; display: flex;align-items: center;height: 80px;">
+        <div class="col-lg-4 col-xl-4 col-md-4 col-sm-4 col-xs-4  col-2">
+            <div (click)="closeScroll()">
+                <a class="btn-mobile-trigger btn btn-white-outline btn-sm hidden-lg-up">
+                    <span style="font-size:20px;cursor:pointer;color:white;" onclick="document.getElementById('mySidenav').style.display='block'"> <i class="fa fa-navicon" ></i> </span>
+    
+                </a>
+    
+            </div>
+        </div>
+        <div class="col-lg-4 col-xl-4 col-md-4 col-sm-4 col-xs-4 col-6 ">
+            <div >
+    
+                <a href=""> <img src="../../../assets/africano/africano.png" style=" width:42%" alt=""></a>
+    
+            </div>
+        </div>
+        <div class="col-lg-4 col-xl-4 col-md-4 col-sm-4 col-xs-4 col-4">
+            <div style="text-align: center;color: white;display: flex;justify-content: flex-end;" >
+                <a class="btn-user-trigger btn btn-white-outline btn-sm hidden-lg-up classForCNXbtn rounded-pill" style="background: linear-gradient(#ededed, #dadada); color: #909090;" onclick="document.getElementById('id01').style.display='block'">
+                    <i class="fa fa-sign-out"  aria-hidden="true"></i> Connexion
+                </a>
+            </div>
+    
+        </div>
+    </div>
+    <div *ngSwitchCase=true  class="row mobi" style="background-color: #002c42;font-family: 'Open Sans', sans-serif; display: flex;align-items: center;height: 80px;">
+        <div class="col-lg-4 col-xl-4 col-md-4 col-sm-4 col-xs-4  col-2">
+            <div (click)="closeScroll()">
+                <a class="btn-mobile-trigger btn btn-white-outline btn-sm hidden-lg-up">
+                    <span style="font-size:20px;cursor:pointer;color:white;" onclick="document.getElementById('mySidenav').style.display='block'"> <i class="fa fa-navicon" ></i> </span>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-xl-4 col-md-4 col-sm-4 col-xs-4 col-6 " >
+            <div >
+                <a href=""> <img src="../../../assets/africano/africano.png" style=" width:60%" alt=""></a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-xl-4 col-md-4 col-sm-4 col-xs-4 col-4">
+            <div style="text-align:center ;color: white;" (click)="closeScroll()">
+                <a class="classForCNXbtn" style="float: right;" onclick="document.getElementById('mySidenavi').style.display='block'">
+                    <p>
+                        <i class="fa fa-user-circle" aria-hidden="true" style="color: white;font-size: 20px;"> <br>
+                          <span style="font-size: 9px;font-weight: bold;"> Solde :&nbsp; {{score}}</span>   </i>
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="mySidenavi" class="sidenavi mobi" style="font-family: 'Open Sans', sans-serif; width: 100%;height: 100%;">
+        <span (click)="OpenScroll()"> <a href="javascript:void(0)" class="closebtn"  onclick="document.getElementById('mySidenavi').style.display='none'" style="padding: 8px 8px 8px 25px;"> &times;</a></span>
+        <ul class="mm-listview" style="margin-top: 8.5%;height: 94.7%;background-color: #dadada;">
+            <li style="width: 100%;">
+                <p class="nav-mobile-user-info clear" style="font-size: 12px;font-weight: bold;padding-left: 4%;color: #002c42;">
+                    <span>   {{username}}	 </span>
+                </p>
+            </li>
+            <li style="width: 100%;">
+                <p class="nav-mobile-user-info clear" style="font-size: 12px;font-weight: bold;padding-left: 4%;padding-bottom: 2%;">
+                    <span>  Solde :&nbsp; {{score}} DT </span>
+                </p>
+            </li>
+            <li style="width: 100%;">
+                <p class="nav-mobile-user-info clear" style="font-size: 16px;font-weight: bold;padding-left: 4%;padding-bottom: 3%;background: linear-gradient(#0075bf, #002c42);  text-transform: uppercase;">
+                    <span style="color: #ededed">  Activités Du Joueur <i class="fa fa-tablet" aria-hidden="true" style="float: right;font-size: 24px;padding-right: 8%;"></i> </span>
+                </p>
+    
+            </li>
+            <li style="width: 100%;" (click)="OpenScroll()">
+                <p class="nav-mobile-user-info clear" style="border-bottom: 1px solid  rgb(92, 92, 92);padding-left: 4%;font-weight: 500;text-transform: uppercase;padding-bottom: 3%;">
+                    <a routerLink="/History-Paris-Iframe" onclick="document.getElementById('mySidenavi').style.display='none'" style="font-size: 13px;color: #002c42;font-weight: bold;"> Histoirique de paris 			</a>
+                </p>
+            </li>
+            <li style="width: 100%;" (click)="OpenScroll()">
+                <p class="nav-mobile-user-info clear" style=" border-bottom: 1px solid  rgb(92, 92, 92);font-weight: normal;padding-left: 4%;font-weight: 500;text-transform: uppercase;padding-bottom: 3%;">
+                    <a routerLink="/transaction-history" onclick="document.getElementById('mySidenavi').style.display='none'" style="font-size: 14px;color: #002c42;font-weight: bold;">Transactions					</a>
+    
+                </p>
+            </li>
+            <li style="width: 100%;" (click)="OpenScroll()">
+                <p class="nav-mobile-user-info clear" style="font-size: 16px;font-weight: bold;padding-left: 4%;padding-bottom: 3%;background: linear-gradient(#0075bf, #002c42);;  text-transform: uppercase;">
+                    <span style="color: #ededed"> Paiement<i class="fa fa-money" aria-hidden="true" style="float: right;font-size: 24px;padding-right: 8%;"></i></span>
+                </p>
+            </li>
+            <li style="border-bottom: 1px solid  rgb(49, 49, 49);width: 100%;" (click)="OpenScroll()">
+                <p class="nav-mobile-user-info clear" style="border-bottom: 1px solid  rgb(92, 92, 92);font-weight: normal;padding-left: 4%;font-weight: 500;text-transform: uppercase;padding-bottom: 3%;">
+                    <a routerLink="/depot-retrait-Historique" onclick="document.getElementById('mySidenavi').style.display='none'" style="font-size: 13px;color: #002c42;font-weight: bold;"> Historique de depot et retrait	</a>
+                </p>
+            </li>
+            <li style="width: 100%;">
+                <p class="nav-mobile-user-info clear" style="font-size: 16px;font-weight: bold;padding-left: 4%;padding-bottom: 3%;background: linear-gradient(#0075bf, #002c42);  text-transform: uppercase;">
+                    <span style="color: #ededed"> Paramètres du compte<i class="fa fa-cog" aria-hidden="true" style="float: right;font-size: 24px;padding-right: 8%;"></i></span>
+                </p>
+            </li>
+            <li style="width: 100%;" (click)="OpenScroll()">
+                <p class="nav-mobile-user-info clear" style="border-bottom: 1px solid  rgb(92, 92, 92);padding-left: 4%;font-weight: 500;text-transform: uppercase;padding-bottom: 3%;">
+                    <a routerLink="/change-password" onclick="document.getElementById('mySidenavi').style.display='none'" style="font-size: 13px;color: #002c42;font-weight: bold;"> Changer le mot de passe</a>
+                </p>
+            </li>
+            <li style="width: 100%;" (click)="OpenScroll()">
+                <p class="nav-mobile-user-info clear" style="border-bottom: 1px solid  rgb(92, 92, 92);padding-left: 4%;font-weight: 500;text-transform: uppercase;padding-bottom: 3%;">
+                    <a routerLink="/personal-details" onclick="document.getElementById('mySidenavi').style.display='none'" style="font-size: 13px;color: #002c42;font-weight: bold;"> Détails personnels</a>
+                </p>
+            </li>
+            <li style="width: 100%;" (click)="OpenScroll()">
+                <p class="nav-mobile-user-info clear" style="border-bottom: 1px solid  rgb(92, 92, 92);padding-left: 4%;font-weight: 500;text-transform: uppercase;padding-bottom: 3%;">
+                    <a routerLink="/personal-details" onclick="document.getElementById('mySidenavi').style.display='none'" (click)="exit()" style="font-size: 14px;color: #002c42;font-weight: bold;"> Déconnexion</a>
+                </p>
+            </li>
+        </ul>
+    </div>
+    
+    <div *ngSwitchCase=true  class="row mobi mobiBtnav" style='overflow-x:scroll;overflow-y:hidden;height: 65px;'>
+        <div style='width:790px; padding: 0;height: 55px;padding-top: 1%;' [ngSwitch]="bloque">
+            <button  class="btn  " style="background-color: #001F32;outline: 0; color: rgb(197, 194, 194);width: 9%;height: 55px;    display: inline-block;border: 1px solid #0075c3;border-bottom-left-radius: 20px;border-top-right-radius: 20px;" (click)="gotoHome()">
+                <img src="../../../assets/ICONS/H1.png" alt="casino" style="width:  60%;">
+               <p style="text-align: center;font-size: 10px;padding-top: 1px;font-weight: bold;"> Accueil </p> 
+            </button>
+            <button class="btn   " style="background-color: #001F32 ;outline: 0; color: rgb(197, 194, 194);width: 9%;height: 55px;     display: inline-block;border: 1px solid #0075c3;border-bottom-left-radius: 20px;border-top-right-radius: 20px;margin-left: 4px;" (click)="gotoSport()">
+                <img src="../../../assets/ICONS/H10.png" alt="casino" style="width:  60%;">
+               <p style="text-align: center;font-size: 10px;padding-top: 1px;font-weight: bold;"> Sports </p> 
+            </button>
+            <button *ngSwitchCase=false class="btn  " style="background-color: #001F32;outline: 0;color: rgb(197, 194, 194);width: 9%; height: 55px;    display: inline-block;border: 1px solid #0075c3;border-bottom-left-radius: 20px;border-top-right-radius: 20px;margin-left: 4px;" (click)="gotoLive()">
+                <img src="../../../assets/ICONS/H9.png" alt="casino" style="width:  60%;">
+                <p style="text-align: center;font-size: 10px;padding-top: 1px;font-weight: bold;"> Live </p>   
+              </button>
+            <button *ngSwitchCase=false class="btn " id="Gm1" style="background-color: #001F32 ;outline: 0;color: rgb(197, 194, 194);width: 9%; height: 55px;   display: inline-block;border: 1px solid #0075c3;border-bottom-left-radius: 20px;border-top-right-radius: 20px;margin-left: 4px;" (click)="gotoVR()">
+                <img src="../../../assets/ICONS/H11.png" alt="casino" style="width:  60%;">
+                <p style="text-align: center;font-size: 10px;padding-top: 1px;font-weight: bold;">  Virtuels</p> 
+              </button>
+            <button *ngSwitchCase=false class="btn " id="Gm2" style="background-color: #001F32 ;outline: 0;color: rgb(197, 194, 194);width: 9%; height: 55px;   display: inline-block;border: 1px solid #0075c3;border-bottom-left-radius: 20px;border-top-right-radius: 20px;margin-left: 4px;" (click)="gotoCasino()">
+                <img src="../../../assets/ICONS/H2.png" alt="casino" style="width:  60%;"> 
+                <p style="text-align: center;font-size: 10px;padding-top: 1px;font-weight: bold;"> Casino </p> 
+              </button>
+            <button *ngSwitchCase=false class="btn " id="Gm3" style="background-color: #001F32 ;outline: 0;color: rgb(197, 194, 194);width: 9%; height: 55px;   display: inline-block;border: 1px solid #0075c3;border-bottom-left-radius: 20px;border-top-right-radius: 20px;margin-left: 4px;" (click)="gotoLiveCasino()">
+                <img src="../../../assets/ICONS/H6.png" alt="Live casino" style="width:  60%;"> 
+                <p style="text-align: center;font-size: 10px;padding-top: 1px;font-weight: bold;"> Casino live </p> 
+              </button>
+            <button *ngSwitchCase=false class="btn " id="Gm4" style="background-color: #001F32 ;outline: 0;color: rgb(197, 194, 194);width: 9%; height: 55px;   display: inline-block;border: 1px solid #0075c3;border-bottom-left-radius: 20px;border-top-right-radius: 20px;margin-left: 4px;" (click)="gotoBlackJack()">
+                <img src="../../../assets/ICONS/H3.png" alt="black Jack" style="width:  60%;"> 
+                <p style="text-align: center;font-size: 10px;padding-top: 1px;font-weight: bold;"> BlackJack </p> 
+              </button>
+            <button *ngSwitchCase=false class="btn" id="Gm5" style="background-color: #001F32 ;outline: 0;color: rgb(197, 194, 194);width: 10%; height: 55px;   display: inline-block;border: 1px solid #0075c3;border-bottom-left-radius: 20px;border-top-right-radius: 20px;margin-left: 4px;" (click)="gotoHot()">
+                <img src="../../../assets/ICONS/H4.png" alt="casino" style="width:  60%;">
+                <p style="text-align: center;font-size: 10px;padding-top: 1px;font-weight: bold;"> Meilleurs Jeux</p> 
+              </button>
+            <button *ngSwitchCase=false class="btn  " id="Gm6" style="background-color: #001F32 ;outline: 0;color: rgb(197, 194, 194);width: 9%; height: 55px;   display: inline-block;border: 1px solid #0075c3;border-bottom-left-radius: 20px;border-top-right-radius: 20px;margin-left: 4px;" (click)="gotoJP()">
+                <img src="../../../assets/ICONS/H5.png" alt="casino" style="width:  60%;">
+                <p style="text-align: center;font-size: 10px;padding-top: 1px;font-weight: bold;"> JackPot </p> 
+              </button>
+            <button *ngSwitchCase=false class="btn" id="Gm7" style="background-color: #001F32 ;outline: 0;color: rgb(197, 194, 194);width: 9%; height: 55px;   display: inline-block;border: 1px solid #0075c3;border-bottom-left-radius: 20px;border-top-right-radius: 20px;margin-left: 4px;" (click)="gotoEVO()">
+                <img src="../../../assets/ICONS/H8.png" alt="casino" style="width:  60%;">
+                <p style="text-align: center;font-size: 10px;padding-top: 1px;font-weight: bold;"> Evolution </p> 
+            </button>
+        </div>
+    </div>
+</div>

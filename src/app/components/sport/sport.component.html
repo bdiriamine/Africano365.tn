@@ -1,0 +1,14 @@
+
+<div class="row" *ngIf="username">
+    <div id="examples" class="example sesiframe">
+        <iframe id="fileUploadIframe" class="sesiframe" height="100%" scrolling="no" [src]="iframUrl" frameborder="0" seamless="seamless"></iframe>
+
+
+    </div>
+</div>
+
+<div class="row" *ngIf="!username">
+    <div id="examples" class="example sesiframe">
+        <iframe id="fileUploadIframe" class="sesiframe" scrolling="no" height="100%" src="https://afri.ses.bet" frameborder="0" seamless="seamless"></iframe>
+    </div>
+</div>

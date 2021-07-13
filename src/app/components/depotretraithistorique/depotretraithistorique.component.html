@@ -1,0 +1,140 @@
+<div class="container-fluid " style="    font-family: 'Open Sans', sans-serif;">  
+
+
+<!--Iframe bet web-->
+<div class="row no-gutters web" style="    padding-right: 80px;padding-left: 60px;padding-top: 20px;margin-bottom: 100px;">
+    <div class="col-xl-3 col-lg-3 col-3 col-xs-3 col-sm-3" >
+        <app-leftbardepotusers></app-leftbardepotusers>
+    </div>
+
+    <div class="col-xl-9 col-lg-9 col-9 col-xs-9 col-sm-9" style="background-color: black;" >
+        <div class="content-main touch-left"  >
+          <div class="row" style="border-radius: 50px;border:1px solid #9c9c9c;height:40px;padding-top: 1%;width:90%;margin-left: 6%;">
+            <h4 class="page-title" style="font-size:17px;font-weight:bold; text-transform: uppercase;margin: 0 auto;"> Historique de dépôt  et retrait</h4>
+          </div>
+        
+            <div *ngIf="BOL" style="margin-top:3%">
+                <table class="container" id="table">
+                    <thead  >
+                        <tr>
+                    <th> Type </th>
+                    <th> Montant </th>
+                    <th> Date </th>
+                </tr>
+                </thead>
+                
+                <tbody style="background-color: #f5f5f5;" *ngFor="let tk of retraitDepot;index as i"  >
+                  <td *ngIf="tk.amount > 0">Dépôt
+                  </td>  
+                  <td *ngIf="tk.amount < 0">
+                    Retrait
+                  </td> 
+                    <td *ngIf="tk.amount > 0" style="color: #366405">{{tk.amount  }}</td>
+                    <td *ngIf="tk.amount < 0" style="color: red;" >{{tk.amount  }}</td>
+                    <td *ngIf="tk.amount > 0" style="color: #366405">{{tk.created_at | date: 'dd/MM/yy'   }}  </td>
+                    <td *ngIf="tk.amount < 0" style="color: red;" >{{tk.created_at | date: 'dd/MM/yy'   }}  </td>
+
+
+
+                </tbody>
+
+
+                </table>
+
+
+
+          
+            </div>
+            <div class="row" *ngIf="!BOL">
+                <div  class="col-xl-12 col-lg-12 col-12 col-xs-12 col-sm-12 " >
+               
+                    <div class="d-flex justify-content-center">
+                        <div class="spinner-border spinner-border-sm mr-8" style="width: 3rem; height: 3rem;color: #00a2ff;" role="status">
+                          <span class="sr-only" >Loading...</span>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+</div>
+  
+<div class="row mobi" style=" margin-bottom: 2%;">
+    <app-leftbardepotusers></app-leftbardepotusers>
+  </div>
+<div class="row mobi" style="margin-bottom: 2%;">
+    <div class="col-xl-12 col-lg-12 col-12 col-xs-12 col-sm-12 "  >
+        <div class="content-main touch-left" >
+          <div class="row" style="border-radius: 50px;border:1px solid #9c9c9c;height:40px;padding-top: 3%;width:90%;margin-left: 6%;">
+            <h4 class="page-title" style="font-size:13px;font-weight:bold; text-transform: uppercase;margin: 0 auto;"> Historique de dépôt  et retrait</h4>
+          </div>
+          
+            <div *ngIf="BOL" style="width: 100%;padding-left: 10%;padding-top: 3%;">
+                <div class="row" style="border: 1px solid #0075bf;background: linear-gradient(#0075bf, #00527a);width: 100%;" >
+                  <div class="col-xl-4 col-lg-4 col-4 col-xs-4 col-sm-4" style="border: 1px solid white;" >
+                    <p class="textTitreBET btncolortick"  style="width: 100%;color: white;" > Type</p>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-4 col-xs-4 col-sm-4"  style="border: 1px solid white;">
+                    <p class="textTitreBET btncolortick" style="width: 100%;color: white;" > Montant</p>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-4 col-xs-4 col-sm-4"  style="border: 1px solid white;">
+                    <p class="textTitreBET btncolortick" style="width: 100%;color: white;"  > Date</p>
+                </div>
+                </div>
+                <div class="row"    *ngFor="let tk of retraitDepot;index as i"  style="background-color: #ededed;width: 100%;"  >
+                 
+                    <div class="col-xl-4 col-lg-4 col-4 col-xs-4 col-sm-4"  style="border: 1px solid #0075bf;"  >
+                      <div *ngIf="tk.amount > 0">
+                        <p class="textTitreBET " style="color: green;"> Dépôt</p>
+                      </div>  
+                      <div *ngIf="tk.amount < 0">
+                        <p class="textTitreBET " style="color: red;"> Retrait</p>
+                      </div> 
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-4 col-xs-4 col-sm-4" style="border: 1px solid #0075bf;"   >
+                      <div *ngIf="tk.amount > 0">
+                        <p class="textTitreBET " style="color: green;"> {{tk.amount  }}</p>
+                      </div> 
+                      <div *ngIf="tk.amount < 0">
+                        <p class="textTitreBET " style="color: red;"> {{tk.amount  }}</p>
+                      </div>  
+                    </div>
+                  
+                  
+                    <div class="col-xl-4 col-lg-4 col-4 col-xs-4 col-sm-4" style="border: 1px solid #0075bf;"  >
+                        <div *ngIf="tk.amount > 0">
+                            <p class="textTitreBET " style="color: green;"><span> {{tk.created_at | date: 'dd/MM/yy'   }}   </span></p>
+                          </div>  
+                          <div *ngIf="tk.amount < 0">
+                            <p class="textTitreBET " style="color: red;"><span> {{tk.created_at | date: 'dd/MM/yy'   }}   </span></p>
+                          </div> 
+                      
+                    </div>
+                       
+    
+                </div>
+         
+            </div>
+           
+            <div class="row" *ngIf="!BOL">
+                <div  class="col-xl-12 col-lg-12 col-12 col-xs-12 col-sm-12 " >
+               
+                    <div class="d-flex justify-content-center">
+                        <div class="spinner-border  spinner-border-sm mr-8" style="width: 3rem; height: 3rem;color: #00a2ff;" role="status">
+                          <span class="sr-only">Loading...</span>
+                        </div>
+                      </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</div> 
