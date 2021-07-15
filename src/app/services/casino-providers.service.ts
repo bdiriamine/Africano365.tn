@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class CasinoProvidersService {
   urlGet:any;
   limit:number;
-  url = 'https://africano365.tn:81/api/games';
+  url = 'https://localhost:81/api/games';
   monObjetcnxCasino ={"page":2,"url":"", "limit":199};
   monObjetcnxCa={"page":2, "limit":600};
   urlGame:any;
@@ -15,8 +15,8 @@ export class CasinoProvidersService {
   urliframe=localStorage.getItem("cs");
   urstargame:any;
   casinoList:any;
-  ur2 = 'https://africano365.tn:81/api/IncreaseGame/';
-  urlTopGames = 'https://africano365.tn:81/api/topGames';
+  ur2 = 'https://localhost:81/api/IncreaseGame/';
+  urlTopGames = 'https://localhost:81/api/topGames';
   mySubString:string
    hr:any
    
@@ -204,6 +204,10 @@ getAllCasino(){
   this.urlGet= this.urliframe
   this.limit=2826;
  return this.http.get(this.url, {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    'Authorization': 'mon-jeton'
+  }),
     params: {
       page: 1,
       limit: this.limit,
@@ -214,7 +218,11 @@ getAllCasino(){
 }
 getGameCatigory(text){
   this.limit=2400
-  return this.http.get<any>("https://africano365.tn:81/api/game-categories/?",{
+  return this.http.get<any>("https://localhost:81/api/games/?",{
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': `bearer ${localStorage.getItem('token')}`
+    }),
     params: {
       page: 1,
       limit: this.limit,
@@ -228,6 +236,10 @@ gameProvider(text){
   this.urlGet= this.urliframe
   this.limit=900;
   return this.http.get(this.url, {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': `bearer ${localStorage.getItem('token')}`
+    }),
     params: {
       page: 1,
       limit: this.limit,
@@ -241,6 +253,8 @@ gameProvider(text){
 }
    //-------------------------------- PlAY GAME CASINO ------------------------------------------------//
    star(game) {
+
+
     let ui = localStorage.getItem("IdG")
     this.mySubString = ui.substring(
       ui.lastIndexOf('') +1
@@ -250,7 +264,10 @@ gameProvider(text){
    game.lastIndexOf("&Path=")+7, 
  );
  this.urstargame=localStorage.getItem("urliframe");
-   this.zaaa=this.urstargame+this.mySubString
+ console.log(this.urstargame)
+ console.log(this.mySubString)
+   this.zaaa=this.urstargame+"/"+this.mySubString
+
    return this.http.get(this.zaaa)
  
 
@@ -278,6 +295,10 @@ starGabi(game,gameGabi,menutiTLE){
     this.urlGet= this.urliframe
     this.limit=12;
     return this.http.get(this.urlTopGames, {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': `bearer ${localStorage.getItem('token')}`
+      }),
       params: {
         page: 1,
         limit: this.limit,
@@ -305,6 +326,10 @@ starGabi(game,gameGabi,menutiTLE){
     this.urlGet= this.urliframe
     this.limit=2826;
     return this.http.get(this.url, {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': `bearer ${localStorage.getItem('token')}`
+      }),
       params: {
         page: 1,
         limit: this.limit,
@@ -318,6 +343,10 @@ starGabi(game,gameGabi,menutiTLE){
     this.urlGet= this.urliframe
     this.limit=20;
     return this.http.get(this.urlTopGames, {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': `bearer ${localStorage.getItem('token')}`
+      }),
       params: {
         page: 1,
         limit: this.limit,

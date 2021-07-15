@@ -15,10 +15,13 @@ export class HistoryiframeparisComponent implements OnInit {
     element.style.display = "none"
     this.getuser();
     if (this.username ){
-      let tokenInfo = this.getDecodedAccessToken(localStorage.getItem("token")); // decode token
-      this.urls=this.sanitizer.bypassSecurityTrustResourceUrl(tokenInfo.iframeURL);
+      let tokenInfo = localStorage.getItem("url"); // decode token
+      tokenInfo=tokenInfo.replace('"',"")
+      this.urls=this.sanitizer.bypassSecurityTrustResourceUrl(tokenInfo);
       this.urls=this.urls.changingThisBreaksApplicationSecurity.toString()
       this.urls=this.urls+'&path=/Ticket'
+      console.log(this.urls);
+      
       this.urls=this.sanitizer.bypassSecurityTrustResourceUrl(this.urls);
      }
   }

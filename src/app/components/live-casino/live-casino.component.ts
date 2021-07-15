@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { CasinoProvidersService } from 'src/app/services/casino-providers.service';
@@ -18,7 +18,7 @@ games:any;
 ALLgames:any;
 provider:any;
 filterdata = '';
-url = 'https://africano365.tn:81/api/live-games';
+url = 'https://localhost:81/api/live-games';
 urliframe=localStorage.getItem("cs");
 load:boolean;
   urlHref: any;
@@ -36,6 +36,10 @@ ngOnInit(): void {
 }
 loadInitPost() {
   return this.http.get(this.url, {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': `bearer ${localStorage.getItem('token')}`
+    }),
     params: {
       page: 1,
       limit: 900,

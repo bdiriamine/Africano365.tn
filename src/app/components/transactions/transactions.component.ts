@@ -39,11 +39,11 @@ lengthdata :number;
 getdTicketsPlayer(){
   
     this.transc.getTransictions(this.UserPlayer.id).subscribe(res =>{
-      this.lengthdata= res.transactions.length;
+      this.lengthdata= res.length;
     if( res)
     {
       this.BOL= true;
-      this.transactions =res.transactions.reverse();
+      this.transactions =res.reverse();
       this.transactions.forEach(element => {
         element.Date=new Date(element.Date)
       });
@@ -57,12 +57,12 @@ getdTicketsPlayer(){
 getdTicketsPlayerPage(page){
     this.zindex=page;
     this.transc.getTransictionsByPage(this.UserPlayer.id,page).subscribe(res =>{
-    this.lengthdata= res.transactions.length;
+    this.lengthdata= res.length;
     if( res)
     {
       
       this.BOL= true;
-      this.transactions =res.transactions.reverse();
+      this.transactions =res.reverse();
       this.transactions.forEach(element => {
         element.Date=new Date(element.Date)
       });

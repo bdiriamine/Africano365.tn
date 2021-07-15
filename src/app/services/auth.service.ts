@@ -11,7 +11,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   providedIn: 'root'
 })
 export class AuthService {
-  private url = "https://africano365.tn:81/api";
+  private url = "https://localhost:81/api";
 // private url = "http://localhost:3000/api";
 isUserLoggedIn = new BehaviorSubject<boolean>(false);
 userId: Pick<User, "id">;
@@ -67,13 +67,15 @@ login(
     .pipe(
       first(),
       tap((tokenObject: any) => {
-       // console.log(tokenObject)
+        console.log(tokenObject)
      
         localStorage.setItem("Users", JSON.stringify(tokenObject.user));
         localStorage.setItem("IdG", JSON.stringify(tokenObject.user.ref_uuid));
+        localStorage.setItem("url", JSON.stringify(tokenObject.url));
+
         this.userplayer = tokenObject.user
         this.isUserLoggedIn.next(true);
-        window.location.reload();
+        //window.location.reload();
         
       }),
       catchError(

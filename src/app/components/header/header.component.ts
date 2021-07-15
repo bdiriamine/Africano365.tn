@@ -16,7 +16,7 @@ import Swal from 'sweetalert2'
 export class HeaderComponent implements OnInit {
   socket: io.Socket;
     token = localStorage.getItem("token");
-    SOC_URL = 'https://africano365.tn:81';
+    SOC_URL = 'https://localhost:81';
 id;
   tk:any;
   bloque:boolean;

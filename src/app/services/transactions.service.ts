@@ -9,7 +9,7 @@ import { ErrorHandlerService } from './error-handler.service';
 })
 
 export class TransactionsService {
-  private url = "https://africano365.tn:81/api"
+  private url = "https://localhost:81/api"
   constructor(private http: HttpClient, private errorHandlerService: ErrorHandlerService,) { }
   httpOptions: { headers: HttpHeaders } = {
     headers: new HttpHeaders({ "Content-Type": "application/json" }),
@@ -20,7 +20,12 @@ export class TransactionsService {
 
   ): Observable<any> {
     return this.http
-      .post(`${this.url}/transactions`, { PlayerId, }, this.httpOptions)
+      .get(`${this.url}/transactions`,{
+        headers: new HttpHeaders({
+          'Content-Type':  'application/json',
+          'Authorization': `bearer ${localStorage.getItem('token')}`
+        })
+      })
       .pipe(
         first(),
         tap((UserSoldeandBalance) => {
@@ -40,7 +45,12 @@ export class TransactionsService {
     page
   ): Observable<any> {
     return this.http
-      .post(`${this.url}/transactions`, { PlayerId,page }, this.httpOptions)
+      .get(`${this.url}/transactions?page=${page}&limit=10`, {
+        headers: new HttpHeaders({
+          'Content-Type':  'application/json',
+          'Authorization': `bearer ${localStorage.getItem('token')}`
+        })
+      })
       .pipe(
         first(),
         tap((UserSoldeandBalance) => {

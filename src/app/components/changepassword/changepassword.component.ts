@@ -44,11 +44,13 @@ export class ChangepasswordComponent implements OnInit {
     if(this.userNvMdb.nouveaumdb != this.ChangeMdbForm.value.repeter){
       window.alert(" Mot de passe incorrect ")
     }
-    axios.post('https://africano365.tn:81/api/changePassword',this.userNvMdb).then((resp)=>{
-      localStorage.setItem('token',resp.data.token)
+    axios.post('https://localhost:81/api/changePassword',this.userNvMdb,{ headers: {"Authorization" : `Bearer ${localStorage.getItem('token')}`} }).then((resp)=>{
+   
       localStorage.setItem('user', resp.data.user.username);
-      localStorage.setItem('score', resp.data.user.score);
+
       this.router.navigate(['/sport'])
+    }).catch(err=>{
+      window.alert(" Mot de passe incorrect ")
     })
 }
 }

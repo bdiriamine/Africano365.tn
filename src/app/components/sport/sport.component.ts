@@ -30,7 +30,7 @@ export class SportComponent implements OnInit {
     element.style.display = "block"
     this.getuser();
     if (this.username ){ this.tokenInfo = this.getDecodedAccessToken(localStorage.getItem("token")); 
-    this.urls=this.sanitizer.bypassSecurityTrustResourceUrl(this.tokenInfo.iframeURL);  
+    this.urls=this.sanitizer.bypassSecurityTrustResourceUrl(localStorage.getItem("url"));  
   
      this.txt = this.urls.changingThisBreaksApplicationSecurity.toString()
      localStorage.setItem("cs", this.txt)
@@ -43,7 +43,7 @@ export class SportComponent implements OnInit {
   this.iframUrl= localStorage.getItem("urliframe");
       if(!this.iframUrl){
         this.iframUrl= this.sanitizer.bypassSecurityTrustResourceUrl(`https://afri.ses.bet/Account/SportsBookAutoLogin?session=${this.session}`);
-        localStorage.setItem("urliframe",`https://afri.ses.bet/(S(${this.session}))/`);
+        localStorage.setItem("urliframe",`https://afri.ses.bet/(S(${this.session}))`);
         setTimeout(()=>{  this.iframUrl= this.sanitizer.bypassSecurityTrustResourceUrl(`https://afri.ses.bet/(S(${this.session}))/`)}, 1000);
  
       }else{

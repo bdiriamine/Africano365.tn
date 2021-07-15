@@ -9,7 +9,7 @@ import { ErrorHandlerService } from './error-handler.service';
 })
 
 export class HistoryDepotRetraitService {
-  private url = "https://africano365.tn:81/api"
+  private url = "https://localhost:81/api"
   constructor(private http: HttpClient, private errorHandlerService: ErrorHandlerService,) { }
   httpOptions: { headers: HttpHeaders } = {
     headers: new HttpHeaders({ "Content-Type": "application/json" }),
@@ -21,7 +21,12 @@ export class HistoryDepotRetraitService {
   ): Observable<any> {
    
     return this.http
-      .post(`${this.url}/depotHistory`, { PlayerId, }, this.httpOptions)
+      .get(`${this.url}/depotHistory`,{
+        headers: new HttpHeaders({
+          'Content-Type':  'application/json',
+          'Authorization': `bearer ${localStorage.getItem('token')}`
+        })
+      })
       .pipe(
         first(),
         tap((UserSoldeandBalance) => {

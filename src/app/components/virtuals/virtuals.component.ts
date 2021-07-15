@@ -25,7 +25,7 @@ export class VirtualsComponent implements OnInit {
 load:boolean;
 urlGet:any;
 limit:any;
-url = 'https://africano365.tn:81/api/games';
+url = 'https://localhost:81/api/games';
   constructor(private casiprovider : CasinoProvidersService,private sanitizer: DomSanitizer,private http: HttpClient,) {
     this.username=localStorage.getItem("user");
   
@@ -41,6 +41,10 @@ url = 'https://africano365.tn:81/api/games';
       this.urlGet= localStorage.getItem("cs")
       this.limit=2126;
       this.http.get(this.url, {
+        headers: new HttpHeaders({
+          'Content-Type':  'application/json',
+          'Authorization': `bearer ${localStorage.getItem('token')}`
+        }),
         params: {
           page: 1,
           limit: this.limit,
@@ -51,6 +55,9 @@ url = 'https://africano365.tn:81/api/games';
       .then(response => {
         this.ALLgames= response.body
         this.games=this.filterDataByCategory()
+        this.games[0].url=this.games[0].url.replaceAll('"','');
+        console.log(this.games[0].url);
+        
         this.iframUrl= this.sanitizer.bypassSecurityTrustResourceUrl(this.games[0].url)
         this.load=false
       })

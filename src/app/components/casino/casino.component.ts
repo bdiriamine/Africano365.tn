@@ -18,11 +18,11 @@ export class CasinoComponent implements OnInit {
    provider; //-------------------------variable qui contient tous les jeux provider sur service casino------------//
    categoryProvider;  //-------------------------variable qui contient tous les jeux category sur service casino------------//
   filterdata = ''; //-------------------------variable pour filtre------------//
-  url = 'https://africano365.tn:81/api/games'; //-------------------------url game casino------------//
+  url = 'https://localhost:81/api/games'; //-------------------------url game casino------------//
    httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
-      'Authorization': 'mon-jeton'
+      'Authorization': `bearer ${localStorage.getItem('token')}`
     })
   };
   urlinit:any;
@@ -51,6 +51,10 @@ ngOnInit(): void {
 
   loadInitPost() {
     this.http.get(this.url, {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': `bearer ${localStorage.getItem('token')}`
+      }),
       params: {
         page: 1,
         limit: 100,
@@ -70,6 +74,11 @@ ngOnInit(): void {
     this.limitCasinoScroll+=100
     limit=this.limitCasinoScroll
     this.http.get(this.url, {
+      
+        headers: new HttpHeaders({
+          'Content-Type':  'application/json',
+          'Authorization': `bearer ${localStorage.getItem('token')}`
+        }),
       params: {
         page: page,
         limit: limit,
@@ -536,8 +545,8 @@ selectChange (event: any) {
           title: "Votre session a expiré veuillez vous reconnecter"
         });
         setTimeout(()=>{  
-          localStorage.clear()
-          window.location.reload()
+          // localStorage.clear()
+          // window.location.reload()
      }, 5000);
         
     });
