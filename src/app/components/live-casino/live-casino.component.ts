@@ -18,7 +18,7 @@ games:any;
 ALLgames:any;
 provider:any;
 filterdata = '';
-url = 'https://localhost:81/api/live-games';
+url = 'http://localhost:8000/api/live-games';
 urliframe=localStorage.getItem("cs");
 load:boolean;
   urlHref: any;

@@ -18,7 +18,7 @@ export class CasinoComponent implements OnInit {
    provider; //-------------------------variable qui contient tous les jeux provider sur service casino------------//
    categoryProvider;  //-------------------------variable qui contient tous les jeux category sur service casino------------//
   filterdata = ''; //-------------------------variable pour filtre------------//
-  url = 'https://localhost:81/api/games'; //-------------------------url game casino------------//
+  url = 'http://localhost:8000/api/games'; //-------------------------url game casino------------//
    httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',

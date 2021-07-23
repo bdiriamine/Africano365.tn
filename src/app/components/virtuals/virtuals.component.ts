@@ -25,7 +25,7 @@ export class VirtualsComponent implements OnInit {
 load:boolean;
 urlGet:any;
 limit:any;
-url = 'https://localhost:81/api/games';
+url = 'http://localhost:8000/api/games';
   constructor(private casiprovider : CasinoProvidersService,private sanitizer: DomSanitizer,private http: HttpClient,) {
     this.username=localStorage.getItem("user");
   

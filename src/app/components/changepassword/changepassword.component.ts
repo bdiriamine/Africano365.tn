@@ -44,7 +44,7 @@ export class ChangepasswordComponent implements OnInit {
     if(this.userNvMdb.nouveaumdb != this.ChangeMdbForm.value.repeter){
       window.alert(" Mot de passe incorrect ")
     }
-    axios.post('https://localhost:81/api/changePassword',this.userNvMdb,{ headers: {"Authorization" : `Bearer ${localStorage.getItem('token')}`} }).then((resp)=>{
+    axios.post('http://localhost:8000/api/changePassword',this.userNvMdb,{ headers: {"Authorization" : `Bearer ${localStorage.getItem('token')}`} }).then((resp)=>{
    
       localStorage.setItem('user', resp.data.user.username);
 

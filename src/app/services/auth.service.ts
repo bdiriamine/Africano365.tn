@@ -11,7 +11,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   providedIn: 'root'
 })
 export class AuthService {
-  private url = "https://localhost:81/api";
+  private url = "http://localhost:8000/api";
 // private url = "http://localhost:3000/api";
 isUserLoggedIn = new BehaviorSubject<boolean>(false);
 userId: Pick<User, "id">;

@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class CasinoProvidersService {
   urlGet:any;
   limit:number;
-  url = 'https://localhost:81/api/games';
+  url = 'http://localhost:8000/api/games';
   monObjetcnxCasino ={"page":2,"url":"", "limit":199};
   monObjetcnxCa={"page":2, "limit":600};
   urlGame:any;
@@ -15,8 +15,8 @@ export class CasinoProvidersService {
   urliframe=localStorage.getItem("cs");
   urstargame:any;
   casinoList:any;
-  ur2 = 'https://localhost:81/api/IncreaseGame/';
-  urlTopGames = 'https://localhost:81/api/topGames';
+  ur2 = 'http://localhost:8000/api/IncreaseGame/';
+  urlTopGames = 'http://localhost:8000/api/topGames';
   mySubString:string
    hr:any
    
@@ -218,7 +218,7 @@ getAllCasino(){
 }
 getGameCatigory(text){
   this.limit=2400
-  return this.http.get<any>("https://localhost:81/api/games/?",{
+  return this.http.get<any>("http://localhost:8000/api/games/?",{
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
       'Authorization': `bearer ${localStorage.getItem('token')}`

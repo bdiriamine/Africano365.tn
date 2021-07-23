@@ -32,7 +32,7 @@ export class EvolutionComponent implements OnInit {ALLgames:any;
   loadInitPost() {
     if(this.username){
       this.iframUrl2=localStorage.getItem("urliframe")  
-      this.iframUrl2=this.iframUrl2+"Game/Play?gameId=5_1370_0_0"
+      this.iframUrl2=this.iframUrl2+"/Game/Play?gameId=5_1370_0_0"
         this.iframUrl= this.sanitizer.bypassSecurityTrustResourceUrl(this.iframUrl2)
         this.load=false
     }
